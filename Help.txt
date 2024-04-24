@@ -1,0 +1,45 @@
+create new folder using mkdir "folder_name"
+cd to "folder_name"
+create file using touch command (one js file for server and rest all the file you need for the project)
+
+npm init (to setting up the project this will gives you a json file where we can see the dependencies about the project)
+// npm install express
+// npm install body-parser (if needeed)
+
+
+use node "file_name" to run js file in terminal
+use nodemon "file_name" to run server file so that it will update and restart the server automatically
+use ctrl + c to close the server or anythng you want to take the exit
+
+
+
+/* IN THE SERVER FILE */
+
+const express = require("express");
+const bodyParser = require("body-parser");
+const request = require("request");
+const https = require("https");
+
+const app = express();
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(express.static("public"));
+// to make files other than html static create a public named folder and create sub folders and store the file in that folders
+
+
+
+/* here we used to write the app.get and app.post methods */
+example:
+    app.get("/" , function(req, res){
+        *****
+    });
+    app.post("/" , function(req, res){
+        *****
+    });
+
+
+
+
+
+app.listen(8000 , function(){
+    console.log("Server Started.);
+});
